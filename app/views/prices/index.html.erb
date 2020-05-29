@@ -1,0 +1,20 @@
+
+
+<h1>bitcoin</h1>
+
+<% newPrice =  @bitcoin.price.to_f * 100000000 %>
+$1 USD = <%= newPrice %> Satoshis
+<br>
+
+
+<h1>All</h1>
+<% @prices.each do |price| %>
+
+  <% if price.name != "BTC" %>
+    <% newPrice =  ((1 / price.price.to_f) * @bitcoin.price ) * 100000000   %>
+    $1 USD worth of <%= price.name %> = <%=  newPrice %> Satoshis
+    <!%= price.price %>
+  <% end %>
+
+  <br>
+<% end %>
