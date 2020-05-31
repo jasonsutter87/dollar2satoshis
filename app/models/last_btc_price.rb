@@ -1,0 +1,2 @@
+class LastBtcPrice < ApplicationRecord
+end
