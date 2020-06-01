@@ -15,7 +15,7 @@ $1 USD = <%= newPrice %> Satoshis
         label: "My First dataset",
         background_color: "rgba(220,220,220,0.2)",
         border_color: "rgba(220,220,220,1)",
-        data: @LastBtcPrice.all.map{|prices| prices.price}
+        data: @LastBtcPrice.all.map{|prices| prices.price * 100000000}
     }
   ]
 }%>
