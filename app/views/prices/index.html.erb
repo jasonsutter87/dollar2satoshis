@@ -9,7 +9,7 @@ $1 USD = <%= newPrice %> Satoshis
 
 
 <% data = {
-  labels: ["January", "February", "March", "April", "May", "June", "July"],
+  labels: @LastBtcPrice.all.map{|prices| prices.created_at},
   datasets: [
     {
         label: "My First dataset",
