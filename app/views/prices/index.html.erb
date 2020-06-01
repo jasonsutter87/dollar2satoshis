@@ -7,6 +7,21 @@ $1 USD = <%= newPrice %> Satoshis
 <br>
 
 
+
+<% data = {
+  labels: ["January", "February", "March", "April", "May", "June", "July"],
+  datasets: [
+    {
+        label: "My First dataset",
+        background_color: "rgba(220,220,220,0.2)",
+        border_color: "rgba(220,220,220,1)",
+        data: @LastBtcPrice.all.map{|prices| prices.price}
+    }
+  ]
+}%>
+<%= line_chart data%>
+
+
 <h1>All</h1>
 <% @prices.each do |price| %>
 
