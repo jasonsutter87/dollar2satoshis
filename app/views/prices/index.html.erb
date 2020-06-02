@@ -1,44 +1,99 @@
+<div class="price-index-page">
 
 
-<h1>bitcoin</h1>
+  <section>
+    <div class="container-1820">
+      <div class="row justify-content-center">
+        <div class="col-9 text-center">
+            <p class="h2-heading">Dollar to Satoshis</p>
+        </div>
 
-<% newPrice =  @bitcoin.price.to_f * 100000000 %>
-$1 USD = <%= newPrice %> Satoshis
-<br>
-
-
-
-<% data = {
-  labels: @LastBtcPrice.all.map{|prices| prices.created_at},
-  datasets: [
-    {
-        label: "Satoshis Cost Over Time",
-        background_color: "rgba(220,220,220,0.2)",
-        border_color: "rgba(220,220,220,1)",
-        data: @LastBtcPrice.all.map{|prices| prices.price * 100000000}
-    }
-  ]
-}%>
-<%= line_chart data%>
-
-
-
-<div class="row">
-  <div class="col-12 text-center">
-    <h1>All</h1>
-  </div>
-</div>
-
-<div class="row justify-content-center">
-  <% @prices.each do |price| %>
-    <div class="col-12 col-md-5 col-lg-3">
-      <% if price.name != "BTC" %>
-        <% newPrice =  ((1 / price.price.to_f) * @bitcoin.price ) * 100000000   %>
-        $1 worth of <%= price.name %> = <%=  newPrice.round(3) %> Satoshis
-        <% else %>
-          1 BTC always = 100,000,000 Satoshis
-      <% end %>
+        <div class="col-9 text-center">
+          <p>Dollar to Satoshis is all about #StackingSat</p>
+        </div>
+      </div>
     </div>
+  </section>
 
-  <% end %>
+
+  <section>
+    <div class="container-1820">
+      <div class="row justify-content-center">
+        <div class="col-9">
+            <p class="h2-heading text-center">HODL</p>
+        </div>
+
+        <div class="col-9 text-center">
+          <p>#StackingSat isnt about getting rich over night. Its about the soul idea of accumulating and holding on for dear life. Also know as H.O.D.Ling</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="py-3">
+    <div class="container-1820">
+      <div class="row justify-content-center">
+        <div class="col-9">
+            <p class="h3-heading text-center">Dollar to Satoshis</p>
+        </div>
+
+        <div class="col-9">
+            <p class="h4-heading text-center">
+              <% newPrice =  @bitcoin.price.to_f * 100000000 %>
+            $1 USD = <%= newPrice %> Satoshis</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="py-3">
+    <div class="container-1820">
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <% data = {
+            labels: @LastBtcPrice.all.map{|prices| prices.created_at},
+            datasets: [
+              {
+                  label: "Satoshis Cost Over Time",
+                  background_color: "rgba(220,220,220,0.2)",
+                  border_color: "rgba(220,220,220,1)",
+                  data: @LastBtcPrice.all.map{|prices| prices.price * 100000000}
+              }
+            ]
+          }%>
+          <%= line_chart data%>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="py-3">
+    <div class="container-1820">
+      <div class="row justify-content-center">
+        <div class="col-9">
+          <p class="h3-heading text-center">Dollar to Satoshis for World Currencies</p>
+        </div>
+
+        <div class="col-9">
+          <div class="row">
+            <% @prices.each do |price| %>
+              <div class="col-12 col-md-5 col-lg-4 my-3">
+                <% if price.name != "BTC" %>
+                  <% newPrice =  ((1 / price.price.to_f) * @bitcoin.price ) * 100000000   %>
+                  $1 worth of <%= price.name %>:<br><%=  newPrice.round(3) %> Satoshis
+                  <% else %>
+                    1 BTC always = 100,000,000 Satoshis
+                <% end %>
+              </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 </div>

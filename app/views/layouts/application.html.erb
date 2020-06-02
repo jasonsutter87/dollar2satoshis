@@ -11,6 +11,41 @@
   </head>
 
   <body>
+    <div class="container-fluid main-navigation">
+
+        <nav>
+            <div class="row justify-content-between align-items-center d-lg-none">
+                <div class="col p-3">
+                    <%= image_tag('/logo-1.svg')%>
+                </div>
+                    <div class="col-auto">
+                        <i class="fas fa-bars nav-menu-toggle-btn nav-btn-close"></i>
+                </div>
+            </div>
+        </nav>
+
+
+
+        <nav class="d-none d-lg-block">
+            <div class="row py-3">
+                <div class="col d-flex align-items-center">
+                    <h1 class="mb-0 ml-50">
+
+                        <%= image_tag('/logo-1.svg')%>
+                        <p class="sr-only">Dollar to Satoshis</p>
+
+                    </h1>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+
+
+
+
+
+
     <%= yield %>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
