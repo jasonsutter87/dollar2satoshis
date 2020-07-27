@@ -1,7 +1,15 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
+gem 'dotenv-rails', groups: [:development, :test]
+
 
 ruby '2.4.4'
+
+# gem "httparty"
+#
+# gem 'oauth2'
+
+gem "twitter"
 
 
 gem "font-awesome-rails"
